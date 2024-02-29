@@ -1,3 +1,4 @@
+import { abort } from "process";
 import { FunctionComponent } from "react";
 
 const Desktop: FunctionComponent = () => {
@@ -17,7 +18,7 @@ const Desktop: FunctionComponent = () => {
           alt=""
           src="/logo3-1@2x.png"
         />
-        <div className="relative font-medium">about</div>
+        <div className="relative font-medium"  onMouseOver="showText('About')">about</div>
         <div className="relative font-medium">blog</div>
         <div className="relative font-medium">projects</div>
         <div className="relative font-medium">events</div>
