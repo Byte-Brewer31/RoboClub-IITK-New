@@ -6,12 +6,6 @@ import '../App.css';
 function App() {
 
   const navbarStyle = {
-    // backgroundColor: '#333',
-  //   overflow: 'hidden',
-  //   display: 'flex',
-  //   alignItems: 'center',
-  //   padding: '10px 20px',
-  // 
   background: `rgba(51, 51, 51, 0.7) url(${process.env.PUBLIC_URL}/bg.png) center/cover no-repeat`,
   overflow: 'hidden',
   display: 'flex',
@@ -23,13 +17,16 @@ function App() {
     color: '#f2f2f2',
     textAlign: 'center',
     textDecoration: 'none',
-    padding: '10px 16px',
+    padding: '2.5% 10%',
   };
 
-  const logoStyle = {
-    height: '40px', // Adjust the height as needed
-    marginRight: '10px',
-  };
+    const logoStyle = {
+      height: '40px',
+      marginLeft: '15%', // Adjust the left margin as needed
+      marginRight: '100px', // Adjust the right margin as needed
+      marginTop: '20%', // Adjust the top margin as needed
+    };
+    
 
   return (
     <div>
