@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/navbar';
 import Gallery from './components/gallery';
 import AboutUs from './components/about_us';
+import EventRow from './components/events'; 
 import './App.css';
 
 const linkStyle = {
@@ -54,6 +55,19 @@ function App() {
         <h1 style={{fontSize: '5vw'}}>About Us</h1>
       <AboutUs />
       </div>
+
+      <div className="Events" style={{ 
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            marginTop: '5%', 
+            color: 'white',
+          }}>
+          <h1 style={{ fontSize: '5vw' }}>Events</h1>
+          <EventRow />
+          {/* Add more EventRows or content as needed */}
+        </div>
+
        {/* Gallery Component */}
        <div className="Gallery" style={{ 
         display: 'flex',
