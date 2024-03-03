@@ -4,7 +4,7 @@ const EventBox = ({ eventNumber, backgroundColor, eventTitle, eventInfo }) => {
   return (
     <div
       style={{
-        flex: 1,
+        flex: "1",
         backgroundColor: backgroundColor,
         borderRadius: "6.6%",
         boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
@@ -16,10 +16,10 @@ const EventBox = ({ eventNumber, backgroundColor, eventTitle, eventInfo }) => {
         style={{
           width: "100%",
           position: "absolute",
-          top: "-10px", // Adjust this value to control the overlap
-          left: 0,
+          top: "-1%", // Adjust this value to control the overlap
+          left: "0",
           textAlign: "center",
-          zIndex: 1,
+          zIndex: "1",
         }}
       >
         <div
@@ -52,7 +52,7 @@ const EventBox = ({ eventNumber, backgroundColor, eventTitle, eventInfo }) => {
           position: "relative",
           overflow: "hidden",
           borderRadius: "1.5%",
-          marginTop: "25px", // Adjust this value to control the space below the logo
+          marginTop: "5%", // Adjust this value to control the space below the logo
         }}
       >
         <div style={{ padding: "1.5%" }}>
@@ -60,9 +60,9 @@ const EventBox = ({ eventNumber, backgroundColor, eventTitle, eventInfo }) => {
             style={{
               fontFamily: "Poppins",
               fontStyle: "normal",
-              fontWeight: 600,
-              fontSize: "30px",
-              lineHeight: "45px",
+              fontWeight: "600",
+              fontSize: "3vw", // Adjusted to viewport width
+              lineHeight: "4.5vw", // Adjusted to viewport width
               textAlign: "center",
               letterSpacing: "0.05em",
             }}
@@ -73,9 +73,9 @@ const EventBox = ({ eventNumber, backgroundColor, eventTitle, eventInfo }) => {
             style={{
               fontFamily: "Poppins",
               fontStyle: "normal",
-              fontWeight: 500,
-              fontSize: "18px",
-              lineHeight: "27px",
+              fontWeight: "500",
+              fontSize: "1.8vw", // Adjusted to viewport width
+              lineHeight: "2.7vw", // Adjusted to viewport width
               textAlign: "center",
               color: "#FFFFFF",
             }}
