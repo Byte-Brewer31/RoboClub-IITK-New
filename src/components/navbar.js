@@ -20,22 +20,25 @@ function App() {
   }, []);
 
   const navbarStyle = {
-    background: `rgba(51, 51, 51, 0.7) url(${process.env.PUBLIC_URL}/bg.png) center/cover no-repeat`,
     overflow: 'hidden',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: isSmallScreen ? 'space-between' : 'flex-start',
-    padding: '10px 10%',
+    justifyContent: 'space-between', // Adjust alignment for space between items
+    padding: '2% 4%',
   };
 
   const linkContainerStyle = {
-    display: isSmallScreen ? 'none' : 'block',
+    display: isSmallScreen ? (showDropdown ? 'block' : 'none') : 'flex', // Adjust display based on screen size and dropdown state
+    flexDirection: isSmallScreen ? 'column' : 'row', // Adjust flex direction based on screen size
+    textAlign: 'center', // Center align text
+    margin: '0', // Reset margin
   };
 
   const dropdownMenuStyle = {
-    display: isSmallScreen ? (showDropdown ? 'block' : 'none') : 'none',
+    display: isSmallScreen ? (showDropdown ? 'block' : 'none') : 'none', // Adjust display based on screen size and dropdown state
     position: 'absolute',
     top: '100%',
+    left: '0',
     backgroundColor: '#333',
     padding: '10px',
     width: '100%',
@@ -43,15 +46,14 @@ function App() {
 
   const linkStyle = {
     color: '#f2f2f2',
-    textAlign: 'center',
     textDecoration: 'none',
-    padding: '2.5% 10%',
+    padding: '10px',
     display: 'block',
   };
 
   const logoStyle = {
-    height: '40px',
-    margin: '20px 2%',
+    height: '5vw',
+    margin: '1% 1%',
   };
 
   return (
