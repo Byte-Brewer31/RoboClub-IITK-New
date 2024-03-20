@@ -10,6 +10,8 @@ const EventBox = ({ eventNumber, backgroundColor, eventTitle, eventInfo }) => {
         boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
         margin: "1%",
         position: "relative",
+        height: "45vw",
+        width: "30vw",
       }}
     >
       <div
@@ -75,7 +77,7 @@ const EventBox = ({ eventNumber, backgroundColor, eventTitle, eventInfo }) => {
               fontStyle: "normal",
               fontWeight: "500",
               fontSize: "1.8vw", // Adjusted to viewport width
-              lineHeight: "2.7vw", // Adjusted to viewport width
+              lineHeight: "2.8vw", // Adjusted to viewport width
               textAlign: "center",
               color: "#FFFFFF",
             }}
@@ -90,30 +92,38 @@ const EventBox = ({ eventNumber, backgroundColor, eventTitle, eventInfo }) => {
 
 const EventRow = () => {
   return (
-    <div
-      style={{ display: "flex", justifyContent: "space-around", margin: "2%" }}
-    >
-      <EventBox
-        eventNumber={1}
-        backgroundColor="rgba(39, 27, 56, 0.7)"
-        eventTitle="Takneek"
-        eventInfo="The Science and Technology Council presents to you Takneek 2019, the intra-IITK Science and Technology Championship. A competition in which all the pools shall participate with one common aim in mind, winning the coveted Takneek trophy, with their favourite Science-Figure by their side."
+    <div style={{ overflowX: "auto",width: "100vw", alignContent: "center", paddingTop: "2vw" }}>
+      <div
+        style={{ display: "inline-flex", margin: "2%"}}
+      >
+        <EventBox
+          eventNumber={1}
+          backgroundColor="rgba(39, 27, 56, 0.7)"
+          eventTitle="Takneek"
+          eventInfo="The Science and Technology Council presents to you Takneek 2019, the intra-IITK Science and Technology Championship. A competition in which all the pools shall participate with one common aim in mind, winning the coveted Takneek trophy, with their favourite Science-Figure by their side."
 
-      />
+        />
 
-      <EventBox
-        eventNumber={2}
-        backgroundColor="rgba(39, 27, 56, 0.7)"
-        eventTitle="Takneek"
-        eventInfo="The Science and Technology Council presents to you Takneek 2019, the intra-IITK Science and Technology Championship. A competition in which all the pools shall participate with one common aim in mind, winning the coveted Takneek trophy, with their favourite Science-Figure by their side."
-      />
+        <EventBox
+          eventNumber={2}
+          backgroundColor="rgba(39, 27, 56, 0.7)"
+          eventTitle="Takneek"
+          eventInfo="The Science and Technology Council presents to you Takneek 2019, the intra-IITK Science and Technology Championship. A competition in which all the pools shall participate with one common aim in mind, winning the coveted Takneek trophy, with their favourite Science-Figure by their side."
+        />
 
-      <EventBox
-        eventNumber={3}
-        backgroundColor="rgba(39, 27, 56, 0.7)"
-        eventTitle="Takneek"
-        eventInfo="The Science and Technology Council presents to you Takneek 2019, the intra-IITK Science and Technology Championship. A competition in which all the pools shall participate with one common aim in mind, winning the coveted Takneek trophy, with their favourite Science-Figure by their side."
-      />
+        <EventBox
+          eventNumber={3}
+          backgroundColor="rgba(39, 27, 56, 0.7)"
+          eventTitle="Takneek"
+          eventInfo="The Science and Technology Council presents to you Takneek 2019, the intra-IITK Science and Technology Championship. A competition in which all the pools shall participate with one common aim in mind, winning the coveted Takneek trophy, with their favourite Science-Figure by their side."
+        />
+        <EventBox
+          eventNumber={4}
+          backgroundColor="rgba(39, 27, 56, 0.7)"
+          eventTitle="Takneek"
+          eventInfo="The Science and Technology Council presents to you Takneek 2019, the intra-IITK Science and Technology Championship. A competition in which all the pools shall participate with one common aim in mind, winning the coveted Takneek trophy, with their favourite Science-Figure by their side."
+        />
+      </div>
     </div>
   );
 };

@@ -62,6 +62,7 @@ function App() {
             alignItems: 'center',
             marginTop: '5%', 
             color: 'white',
+            width: "100vw"
           }}>
           <h1 style={{ fontSize: '5vw' }}>Events</h1>
           <EventRow />
