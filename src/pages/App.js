@@ -65,11 +65,11 @@ function App() {
         <img src={process.env.PUBLIC_URL + '/logo3-1@2x.png'} alt="Logo" style={{height: '5vw',margin: '1% 1%',}} />
         </div>
         <div style={{ width: '30%',display: 'flex', textAlign:'left', flexDirection: 'column', color: 'white', textDecoration: 'none', padding: '10px'}}>
-          <a href="#" style={linkStyle}>Home</a>
-          <a href="#" style={linkStyle}>About</a>
-          <a href="#" style={linkStyle}>Blog</a>
+          <a href="/" style={linkStyle}>Home</a>
+          <a href="/about" style={linkStyle}>About</a>
+          <a href="/blog" style={linkStyle}>Blog</a>
           <a href="/projects" style={linkStyle}>Projects</a>
-          <a href="#" style={linkStyle}>Team</a>
+          <a href="/team" style={linkStyle}>Team</a>
         </div>
         <div style={{ width: '37%', textAlign:'left'}}>
           <h3 style={{fontSize: '2vw', color: 'white', textAlign: 'left'}}>Social Media </h3>
