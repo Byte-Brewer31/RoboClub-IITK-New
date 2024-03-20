@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import GalleryPage from './gallerypage';
 import AboutUs from './components/about_us';
+import Explore from './explore.js';
+import Projects from './projects.js';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Router, Routes, Route
 
@@ -24,6 +26,8 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/explore" element={<Explore/>} />
+        <Route path="/projects" element={<Projects/>} />
       </Routes>
     </Router>
     </div>

@@ -15,6 +15,11 @@ const linkStyle = {
 };
 
 function App() {
+  const handleClick = () => {
+    // Handle navigation to another page
+    window.location.href = '/explore'; // Change the URL to the desired page
+  };
+
   return (
     <div  className="App">
       <Navbar />
@@ -30,7 +35,7 @@ function App() {
           <p style={{color:'white', fontSize: '1.7vw', textAlign: 'left' , paddingBottom: '1vw'}}>
             Robotics and other Combinations will make the <br/>world pretty fantastic compared with today
           </p>
-          <button style={{ backgroundColor: '#733CA8', height: '5vw', width: '20vw', fontSize: '1.5vw', borderRadius: '2vw' ,border: 'none'}}>
+          <button style={{ backgroundColor: '#733CA8', height: '5vw', width: '20vw', fontSize: '1.5vw', borderRadius: '2vw' ,border: 'none',cursor: "pointer",}} onClick={handleClick}>
             <p style={{color: 'white', fontSize: '1.7vw', fontWeight: 'bolder'}}>EXPLORE NOW</p>
           </button>
           </div>
@@ -87,7 +92,7 @@ function App() {
           <a href="#" style={linkStyle}>Home</a>
           <a href="#" style={linkStyle}>About</a>
           <a href="#" style={linkStyle}>Blog</a>
-          <a href="#" style={linkStyle}>Projects</a>
+          <a href="http://localhost:8080/projects.js" style={linkStyle}>Projects</a>
           <a href="#" style={linkStyle}>Team</a>
         </div>
         <div style={{ width: '37%', textAlign:'left'}}>
