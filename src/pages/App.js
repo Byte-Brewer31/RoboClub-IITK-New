@@ -14,7 +14,6 @@ function App() {
   return (
     <div  className="App">
       <div style={{ 
-        overflowY: 'scroll',
         display: 'flex', // make the container a flex container
         justifyContent: 'space-between', // add padding for spacing
       }}>
