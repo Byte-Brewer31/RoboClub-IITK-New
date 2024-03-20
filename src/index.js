@@ -65,16 +65,16 @@ root.render(
         </div>
         <div style={{ width: '37%', textAlign:'left'}}>
           <h3 style={{fontSize: '2vw', color: 'white', textAlign: 'left'}}>Social Media </h3>
-          <a href="#">
+          <a href="https://www.youtube.com/@RoboticsClubIITKanpur">
           <img src={process.env.PUBLIC_URL + '/riyoutubefill.svg'} alt="Facebook Icon" style={{width: '6vw', height: 'auto', paddingRight:'1vw'}} />
           </a>
-          <a href="#">
+          <a href="https://www.facebook.com/roboclubiitkanpur/">
           <img src={process.env.PUBLIC_URL + '/mdifacebook.svg'} alt="Facebook Icon" style={{width: '6vw', height: 'auto',paddingRight:'1vw'}} />
           </a>
-          <a href="#">
+          <a href="https://www.instagram.com/roboticsclub_iitk/">
           <img src={process.env.PUBLIC_URL + '/phinstagramlogofill.svg'} alt="Facebook Icon" style={{width: '6vw', height: 'auto',paddingRight:'1vw'}} />
           </a>
-          <a href="#">
+          <a href="https://www.linkedin.com/company/robotics-club-iit-kanpur/?originalSubdomain=in">
           <img src={process.env.PUBLIC_URL + '/uillinkedin.svg'} alt="Facebook Icon" style={{width: '6vw', height: 'auto', paddingRight:'1vw'}} />
           </a>
         </div>
