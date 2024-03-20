@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import '../pages/App.css';
 
 function Navbar() {
   const navbarStyle = {
@@ -36,10 +36,10 @@ function Navbar() {
           <img src={process.env.PUBLIC_URL + '/logo3-1@2x.png'} alt="Logo" style={logoStyle} />
         </a>
         <div style={linkContainerStyle}>
-          <a href="#" style={linkStyle}>About</a>
-          <a href="#" style={linkStyle}>Blog</a>
-          <a href="#" style={linkStyle}>Projects</a>
-          <a href="#" style={linkStyle}>Team</a>
+          <a href="/about" style={linkStyle}>About</a>
+          <a href="/bog" style={linkStyle}>Blog</a>
+          <a href="/projects" style={linkStyle}>Projects</a>
+          <a href="/team" style={linkStyle}>Team</a>
         </div>
       </div>
     </div>

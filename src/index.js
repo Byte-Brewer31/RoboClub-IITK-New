@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import GalleryPage from './gallerypage';
+import App from './pages/App.js';
+import GalleryPage from './pages/gallerypage.js';
 import AboutUs from './components/about_us';
-import Explore from './explore.js';
-import Projects from './projects.js';
+import Explore from './pages/explore.js';
+import Projects from './pages/projects.js';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Router, Routes, Route
 

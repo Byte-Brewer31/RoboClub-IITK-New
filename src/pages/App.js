@@ -1,8 +1,8 @@
 import React from 'react';
-import Navbar from './components/navbar';
-import Gallery from './components/gallery';
-import AboutUs from './components/about_us';
-import EventRow from './components/events'; 
+import Navbar from '../components/navbar';
+import Gallery from '../components/gallery';
+import AboutUs from '../components/about_us';
+import EventRow from '../components/events'; 
 import './App.css';
 
 const linkStyle = {
@@ -92,7 +92,7 @@ function App() {
           <a href="#" style={linkStyle}>Home</a>
           <a href="#" style={linkStyle}>About</a>
           <a href="#" style={linkStyle}>Blog</a>
-          <a href="http://localhost:8080/projects.js" style={linkStyle}>Projects</a>
+          <a href="/projects" style={linkStyle}>Projects</a>
           <a href="#" style={linkStyle}>Team</a>
         </div>
         <div style={{ width: '37%', textAlign:'left'}}>
