@@ -8,6 +8,8 @@ import Explore from './pages/explore.js';
 import Projects from './pages/projects.js';
 import Navbar from './components/navbar';
 import reportWebVitals from './reportWebVitals';
+import Team from './pages/team.js';
+import Blog from './pages/blog.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Router, Routes, Route
 
 const linkStyle = {
@@ -39,6 +41,8 @@ root.render(
         <Route path="/about" element={<AboutUs />} />
         <Route path="/explore" element={<Explore/>} />
         <Route path="/projects" element={<Projects/>} />
+        <Route path="/team" element={<Team/>} />
+        <Route path="/blog" element={<Blog/>} />
       </Routes>
     </Router>
 
