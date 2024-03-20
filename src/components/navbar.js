@@ -1,24 +1,7 @@
-import React, { useState } from 'react';
-import { Button } from '@mui/material';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import React from 'react';
 import '../App.css';
 
-function App() {
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-  const [showDropdown, setShowDropdown] = useState(false); // State to manage dropdown visibility
-
-  // Function to handle toggling the screen size
-  const handleResize = () => {
-    setIsSmallScreen(window.innerWidth <= 768); // Adjust the width threshold as needed for small screens
-  };
-
-  // Add event listener for window resize
-  React.useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    // Cleanup function to remove event listener
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
+function Navbar() {
   const navbarStyle = {
     overflow: 'hidden',
     display: 'flex',
@@ -28,20 +11,10 @@ function App() {
   };
 
   const linkContainerStyle = {
-    display: isSmallScreen ? (showDropdown ? 'block' : 'none') : 'flex', // Adjust display based on screen size and dropdown state
-    flexDirection: isSmallScreen ? 'column' : 'row', // Adjust flex direction based on screen size
+    display: 'flex', // Always display links in a row
+    flexDirection: 'row', // Always arrange links horizontally
     textAlign: 'center', // Center align text
     margin: '0', // Reset margin
-  };
-
-  const dropdownMenuStyle = {
-    display: isSmallScreen ? (showDropdown ? 'block' : 'none') : 'none', // Adjust display based on screen size and dropdown state
-    position: 'absolute',
-    top: '100%',
-    left: '0',
-    backgroundColor: '#333',
-    padding: '10px',
-    width: '100%',
   };
 
   const linkStyle = {
@@ -62,18 +35,7 @@ function App() {
         <a href="#">
           <img src={process.env.PUBLIC_URL + '/logo3-1@2x.png'} alt="Logo" style={logoStyle} />
         </a>
-        {isSmallScreen && (
-          <Button onClick={() => setShowDropdown(!showDropdown)} startIcon={<ArrowDropDownIcon />}>
-            {showDropdown ? 'Hide Menu' : 'Show Menu'}
-          </Button>
-        )}
         <div style={linkContainerStyle}>
-          <a href="#" style={linkStyle}>About</a>
-          <a href="#" style={linkStyle}>Blog</a>
-          <a href="#" style={linkStyle}>Projects</a>
-          <a href="#" style={linkStyle}>Team</a>
-        </div>
-        <div style={dropdownMenuStyle}>
           <a href="#" style={linkStyle}>About</a>
           <a href="#" style={linkStyle}>Blog</a>
           <a href="#" style={linkStyle}>Projects</a>
@@ -84,4 +46,4 @@ function App() {
   );
 }
 
-export default App;
+export default Navbar;
