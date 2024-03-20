@@ -4,7 +4,6 @@ function AboutUs() {
   return (
     <div>
       <div className="App" style={{ 
-        overflowY: 'scroll',
         display: 'flex', // make the container a flex container
         justifyContent: 'space-between', // add padding for spacing
       }}>

@@ -16,14 +16,7 @@ const linkStyle = {
 
 function App() {
   return (
-    <div  className="App" style={{
-      backgroundImage: `url(${process.env.PUBLIC_URL}/bg.png)`, 
-        backgroundSize: 'cover', 
-        backgroundRepeat: 'repeat', 
-        backgroundPosition: 'center', 
-        width: '100vw', 
-        minHeight: '100vh', 
-    }}>
+    <div  className="App">
       <Navbar />
       <div style={{ 
         overflowY: 'scroll',

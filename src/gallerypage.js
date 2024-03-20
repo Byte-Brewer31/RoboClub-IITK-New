@@ -1,30 +1,18 @@
-// Gallery.js
-
 import React from 'react';
 
-const GalleryItem = ({ imageSrc, altText, isLastItem, onClick }) => (
+const GalleryItem = ({ imageSrc, altText }) => (
   <div className="gallery-item">
     <img src={imageSrc} alt={altText} />
-    {isLastItem && (
-      <div className="overlay" onClick={onClick}>
-        Show More
-      </div>
-    )}
   </div>
 );
 
-const Gallery = () => {
+const GalleryPage = () => {
   const galleryData = [
     { id: 1, src: '../gal2-1@2x.png', alt: 'Image 1' },
     { id: 2, src: '../gal3-1@2x.png', alt: 'Image 2' },
     { id: 3, src: '../gal4-1@2x.png', alt: 'Image 3' },
     { id: 4, src: '../robotics-club-img-1@2x.png', alt: 'Image 4' },
   ];
-
-  const handleShowMore = () => {
-    // Handle navigation to another page
-    window.location.href = '/gallery'; // Change the URL to the desired page
-  };
 
   return (
     <>
@@ -43,7 +31,6 @@ const Gallery = () => {
           }
 
           .gallery-item {
-            position: relative; /* Ensure proper positioning for overlay */
             width: 100%;
             max-width: 100%;
             overflow: hidden;
@@ -54,35 +41,14 @@ const Gallery = () => {
             height: auto;
             display: block;
           }
-
-          .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4); /* Adjust the opacity as needed */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-          }
         `}
       </style>
 
       {/* React Components */}
       <div className="gallery-container">
         <div className="gallery-grid">
-          {galleryData.map((item, index) => (
-            <GalleryItem
-              key={item.id}
-              imageSrc={item.src}
-              altText={item.alt}
-              isLastItem={index === galleryData.length - 1}
-              onClick={handleShowMore}
-            />
+          {galleryData.map(item => (
+            <GalleryItem key={item.id} imageSrc={item.src} altText={item.alt} />
           ))}
         </div>
       </div>
@@ -90,4 +56,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default GalleryPage;
