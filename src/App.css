@@ -1,7 +1,7 @@
 .App {
   text-align: center;
+  overflow: hidden; /* Hide overflow to prevent content from appearing outside the viewport */
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +35,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in-visible {
+  opacity: 1;
+}
+
+.content-section {
+  margin-top: 50px; /* Adjust as needed */
 }
