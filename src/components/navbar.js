@@ -7,7 +7,7 @@ function Navbar() {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between', // Adjust alignment for space between items
-    padding: '2% 4%',
+    padding: '2vw 4vw',
   };
 
   const linkContainerStyle = {
@@ -20,24 +20,25 @@ function Navbar() {
   const linkStyle = {
     color: '#f2f2f2',
     textDecoration: 'none',
-    padding: '10px',
+    padding: '0 5vw',
     display: 'block',
+    fontSize: '2.5vw'
   };
 
   const logoStyle = {
     height: '5vw',
-    margin: '1% 1%',
+    margin: '1vw 1vw',
   };
 
   return (
     <div>
       <div style={navbarStyle}>
-        <a href="#">
+        <a href="/">
           <img src={process.env.PUBLIC_URL + '/logo3-1@2x.png'} alt="Logo" style={logoStyle} />
         </a>
         <div style={linkContainerStyle}>
           <a href="/about" style={linkStyle}>About</a>
-          <a href="/bog" style={linkStyle}>Blog</a>
+          <a href="/blog" style={linkStyle}>Blog</a>
           <a href="/projects" style={linkStyle}>Projects</a>
           <a href="/team" style={linkStyle}>Team</a>
         </div>

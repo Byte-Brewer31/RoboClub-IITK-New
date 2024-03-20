@@ -67,6 +67,7 @@ const EventBox = ({ eventNumber, backgroundColor, eventTitle, eventInfo }) => {
               lineHeight: "4.5vw", // Adjusted to viewport width
               textAlign: "center",
               letterSpacing: "0.05em",
+              color: "#FFFFFF",
             }}
           >
             {eventTitle}
@@ -92,7 +93,17 @@ const EventBox = ({ eventNumber, backgroundColor, eventTitle, eventInfo }) => {
 
 const EventRow = () => {
   return (
+    <div className="Events" style={{ 
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      color: 'white',// Add padding for spacing
+      width: "100vw"
+    }}>
+    <h1 style={{ fontSize: '5vw' }}>Events</h1>
+
     <div style={{ overflowX: "auto",width: "100vw", alignContent: "center", paddingTop: "2vw" }}>
+
       <div
         style={{ display: "inline-flex", margin: "2%"}}
       >
@@ -124,6 +135,7 @@ const EventRow = () => {
           eventInfo="The Science and Technology Council presents to you Takneek 2019, the intra-IITK Science and Technology Championship. A competition in which all the pools shall participate with one common aim in mind, winning the coveted Takneek trophy, with their favourite Science-Figure by their side."
         />
       </div>
+    </div>
     </div>
   );
 };

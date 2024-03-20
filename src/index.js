@@ -6,6 +6,7 @@ import GalleryPage from './pages/gallerypage.js';
 import AboutUs from './components/about_us';
 import Explore from './pages/explore.js';
 import Projects from './pages/projects.js';
+import Navbar from './components/navbar';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Router, Routes, Route
 
@@ -21,6 +22,7 @@ root.render(
       width: '100vw', 
       minHeight: '100vh', 
     }}>
+   <Navbar />
     <Router>
       <Routes>
         <Route path="/" element={<App />} />

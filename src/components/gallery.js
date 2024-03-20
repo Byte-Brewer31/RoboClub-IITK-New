@@ -73,7 +73,16 @@ const Gallery = () => {
       </style>
 
       {/* React Components */}
+      <div className="Gallery" style={{ 
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        color: 'white', // Add color for better visibility
+      }}>
+        <h1  style={{fontSize: '5vw'}}>Gallery</h1>
+        </div>
       <div className="gallery-container">
+      
         <div className="gallery-grid">
           {galleryData.map((item, index) => (
             <GalleryItem

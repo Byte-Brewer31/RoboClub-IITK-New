@@ -22,7 +22,6 @@ function App() {
 
   return (
     <div  className="App">
-      <Navbar />
       <div style={{ 
         overflowY: 'scroll',
         display: 'flex', // make the container a flex container
@@ -43,39 +42,16 @@ function App() {
             <img src={`${process.env.PUBLIC_URL}/chat-botamico-1-1@2x.png`} alt="Red" style={{ width: '100%'}} />
           </div>
       </div>
-      <div className="About Us" style={{ 
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        padding: '5%', // Add padding for spacing
-        color: 'white', // Add color for better visibility
-      }}>
-        <h1 style={{fontSize: '5vw'}}>About Us</h1>
+      <div className="About Us">
       <AboutUs />
       </div>
 
-      <div className="Events" style={{ 
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            marginTop: '5%', 
-            color: 'white',
-            width: "100vw"
-          }}>
-          <h1 style={{ fontSize: '5vw' }}>Events</h1>
+      <div className="Events">
           <EventRow />
-          {/* Add more EventRows or content as needed */}
         </div>
 
        {/* Gallery Component */}
-       <div className="Gallery" style={{ 
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        padding: '5%', // Add padding for spacing
-        color: 'white', // Add color for better visibility
-      }}>
-        <h1  style={{fontSize: '5vw'}}>Gallery</h1>
+       <div className="Gallery" >
         <Gallery />
       </div>
       <div style={{ 
