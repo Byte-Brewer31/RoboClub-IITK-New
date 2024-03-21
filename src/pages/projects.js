@@ -10,12 +10,15 @@ const ProjectBlock = ({ imageUrl, title, description, isImageLeft, titleColor, c
     flex: "1",
     marginRight: isImageLeft ? "5vw" : "0", // Margin-right only if image is on the left
     order: isImageLeft ? "1" : "2", // Change the order based on image position
+    marginLeft: "2vw", // Add space on the left
   };
 
   const contentStyle = {
     flex: "2",
     order: isImageLeft ? "2" : "1", // Change the order based on image position
-    color: contentColor // Set content color dynamically
+    color: contentColor, // Set content color dynamically
+    marginLeft: "2vw", // Add space on the left
+    marginRight: "2vw", // Add space on the right
   };
 
   return (
