@@ -62,6 +62,7 @@ const TeamMemberBox = ({ imageUrl, name, designation, facebookLink, instagramLin
             display: "flex",
             justifyContent: "space-around",
             width: "100%",
+            paddingBottom: "1vw",
           }}
         >
            <a href={facebookLink} style={{ color: "#FFFFFF" }}>
@@ -143,7 +144,7 @@ const TeamRow = () => {
         style={{ display: "flex", flexWrap: "wrap", width: "100%" }}
       >
         <TeamMemberBox
-          imageUrl={`${process.env.PUBLIC_URL}/team_member5.jpg`}
+          imageUrl={process.env.PUBLIC_URL + '/phinstagramlogofill.svg'}
           name="Emily Wilson"
           designation="Content Writer"
           facebookLink="#"
