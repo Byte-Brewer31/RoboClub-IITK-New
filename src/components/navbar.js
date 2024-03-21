@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../pages/App.css';
 
 function Navbar() {
@@ -33,14 +34,14 @@ function Navbar() {
   return (
     <div>
       <div style={navbarStyle}>
-        <a href="/">
+        <Link to="/">
           <img src={process.env.PUBLIC_URL + '/logo3-1@2x.png'} alt="Logo" style={logoStyle} />
-        </a>
+        </Link>
         <div style={linkContainerStyle}>
-          <a href="/about" style={linkStyle}>About</a>
-          <a href="/blog" style={linkStyle}>Blog</a>
-          <a href="/projects" style={linkStyle}>Projects</a>
-          <a href="/team" style={linkStyle}>Team</a>
+          <Link to="/about" style={linkStyle}>About</Link>
+          <Link to="/blog" style={linkStyle}>Blog</Link>
+          <Link to="/projects" style={linkStyle}>Projects</Link>
+          <Link to="/team" style={linkStyle}>Team</Link>
         </div>
       </div>
     </div>

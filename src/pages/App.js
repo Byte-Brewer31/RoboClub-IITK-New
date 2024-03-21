@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../components/navbar';
 import Gallery from '../components/gallery';
 import AboutUs from '../components/about_us';
 import EventRow from '../components/events'; 

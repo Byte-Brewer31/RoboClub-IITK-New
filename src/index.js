@@ -10,7 +10,7 @@ import Navbar from './components/navbar';
 import reportWebVitals from './reportWebVitals';
 import Team from './pages/team.js';
 import Blog from './pages/blog.js';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Router, Routes, Route
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Import Router, Routes, Route
 
 const linkStyle = {
   color: 'white',
@@ -33,8 +33,9 @@ root.render(
       width: '100vw', 
       minHeight: '100vh', 
     }}>
-   <Navbar />
+   
     <Router>
+    <Navbar />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/gallery" element={<GalleryPage />} />
@@ -44,7 +45,7 @@ root.render(
         <Route path="/team" element={<Team/>} />
         <Route path="/blog" element={<Blog/>} />
       </Routes>
-    </Router>
+    
 
     <div style={{ 
         display: 'flex',
@@ -57,26 +58,26 @@ root.render(
         <img src={process.env.PUBLIC_URL + '/logo3-1@2x.png'} alt="Logo" style={{height: '5vw',margin: '1% 1%',}} />
         </div>
         <div style={{ width: '30%',display: 'flex', textAlign:'left', flexDirection: 'column', color: 'white', textDecoration: 'none', padding: '10px'}}>
-          <a href="/" style={linkStyle}>Home</a>
-          <a href="/about" style={linkStyle}>About</a>
-          <a href="/blog" style={linkStyle}>Blog</a>
-          <a href="/projects" style={linkStyle}>Projects</a>
-          <a href="/team" style={linkStyle}>Team</a>
+          <Link to="/" style={linkStyle}>Home</Link>
+          <Link to="/about" style={linkStyle}>About</Link>
+          <Link to="/blog" style={linkStyle}>Blog</Link>
+          <Link to="/projects" style={linkStyle}>Projects</Link>
+          <Link to="/team" style={linkStyle}>Team</Link>
         </div>
         <div style={{ width: '37%', textAlign:'left'}}>
           <h3 style={{fontSize: '2vw', color: 'white', textAlign: 'left'}}>Social Media </h3>
-          <a href="https://www.youtube.com/@RoboticsClubIITKanpur">
+          <Link to="https://www.youtube.com/@RoboticsClubIITKanpur">
           <img src={process.env.PUBLIC_URL + '/riyoutubefill.svg'} alt="Facebook Icon" style={{width: '6vw', height: 'auto', paddingRight:'1vw'}} />
-          </a>
-          <a href="https://www.facebook.com/roboclubiitkanpur/">
+          </Link>
+          <Link to="https://www.facebook.com/roboclubiitkanpur/">
           <img src={process.env.PUBLIC_URL + '/mdifacebook.svg'} alt="Facebook Icon" style={{width: '6vw', height: 'auto',paddingRight:'1vw'}} />
-          </a>
-          <a href="https://www.instagram.com/roboticsclub_iitk/">
+          </Link>
+          <Link to="https://www.instagram.com/roboticsclub_iitk/">
           <img src={process.env.PUBLIC_URL + '/phinstagramlogofill.svg'} alt="Facebook Icon" style={{width: '6vw', height: 'auto',paddingRight:'1vw'}} />
-          </a>
-          <a href="https://www.linkedin.com/company/robotics-club-iit-kanpur/?originalSubdomain=in">
+          </Link>
+          <Link to="https://www.linkedin.com/company/robotics-club-iit-kanpur/?originalSubdomain=in">
           <img src={process.env.PUBLIC_URL + '/uillinkedin.svg'} alt="Facebook Icon" style={{width: '6vw', height: 'auto', paddingRight:'1vw'}} />
-          </a>
+          </Link>
         </div>
         </div>
         <hr style={{width: '85%', borderColor: '#733CA8'}} /> {/* Horizontal line */}
@@ -84,7 +85,9 @@ root.render(
           <p> Copyright © 2022 All rights reserved | Robotics Club, IIT Kanpur</p> {/* Copyright text */}
         </footer>
         <br/>
+        </Router>
         </div>
+        
   </React.StrictMode>
 );
 
