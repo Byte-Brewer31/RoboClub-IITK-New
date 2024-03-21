@@ -10,7 +10,6 @@ const TeamMemberBox = ({ imageUrl, name, designation, facebookLink, instagramLin
         boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
         margin: "1%",
         position: "relative",
-        height: "25vw",
         width: "22vw",
         display: "flex",
         flexDirection: "column",
@@ -24,14 +23,14 @@ const TeamMemberBox = ({ imageUrl, name, designation, facebookLink, instagramLin
         style={{
           width: "70%",
           height: "auto",
-          borderRadius: "50%",
-          marginBottom: "5%",
+          borderRadius: "50vw",
+          marginBottom: "1vw",
         }}
       />
       <div
         style={{
           textAlign: "center",
-          padding: "0 10%",
+          padding: "0 1vw",
         }}
       >
         <h2
@@ -39,7 +38,7 @@ const TeamMemberBox = ({ imageUrl, name, designation, facebookLink, instagramLin
             fontFamily: "Poppins",
             fontWeight: "600",
             fontSize: "3vw",
-            lineHeight: "4.5vw",
+            lineHeight: "3.5vw",
             marginBottom: "2%",
             color: "#FFFFFF",
           }}
@@ -103,7 +102,7 @@ const TeamRow = () => {
         style={{ display: "flex", flexWrap: "wrap", width: "100%" }}
       >
         <TeamMemberBox
-          imageUrl={`${process.env.PUBLIC_URL}/team_member1.jpg`}
+          imageUrl={process.env.PUBLIC_URL + '/mdifacebook.svg'}
           name="John Doe"
           designation="Frontend Developer"
           facebookLink="#"
