@@ -9,9 +9,10 @@ const EventBox = ({ eventNumber, backgroundColor, eventTitle, eventInfo }) => {
         borderRadius: "6.6%",
         boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
         margin: "1%",
+        marginTop:"60px",
         position: "relative",
-        height: "45vw",
-        width: "30vw",
+        width:"85vw",
+        maxWidth: "450px",
       }}
     >
       <div
@@ -27,12 +28,13 @@ const EventBox = ({ eventNumber, backgroundColor, eventTitle, eventInfo }) => {
         <div
           style={{
             width: "30%", // Adjust the size of the circular logo
-            height: "30%", // Adjust the size of the circular logo
+            height: "0",
+            paddingBottom:"30%",
             backgroundColor: "rgba(135, 80, 189, 0.85)",
             borderRadius: "50%",
             margin: "0 auto",
             position: "relative",
-            transform: "translateY(-50%)", // Center vertically
+            transform: "translateY(-50%)",
           }}
         >
           <img
@@ -40,9 +42,9 @@ const EventBox = ({ eventNumber, backgroundColor, eventTitle, eventInfo }) => {
             alt={`Event ${eventNumber}`}
             style={{
               width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              borderRadius: "50%",
+              margin:"auto",
+              marginTop:"15%",
+              objectFit:"cover"
             }}
           />
         </div>
@@ -63,8 +65,7 @@ const EventBox = ({ eventNumber, backgroundColor, eventTitle, eventInfo }) => {
               fontFamily: "Poppins",
               fontStyle: "normal",
               fontWeight: "600",
-              fontSize: "3vw", // Adjusted to viewport width
-              lineHeight: "4.5vw", // Adjusted to viewport width
+              fontSize: "25pt",
               textAlign: "center",
               letterSpacing: "0.05em",
               color: "#FFFFFF",
@@ -77,8 +78,7 @@ const EventBox = ({ eventNumber, backgroundColor, eventTitle, eventInfo }) => {
               fontFamily: "Poppins",
               fontStyle: "normal",
               fontWeight: "500",
-              fontSize: "1.8vw", // Adjusted to viewport width
-              lineHeight: "2.8vw", // Adjusted to viewport width
+              fontSize: "20pt",
               textAlign: "center",
               color: "#FFFFFF",
             }}
@@ -98,11 +98,11 @@ const EventRow = () => {
       flexDirection: 'column',
       alignItems: 'center',
       color: 'white',// Add padding for spacing
-      width: "100vw"
+      width: "100%"
     }}>
-    <h1 style={{ fontSize: '5vw' }}>Events</h1>
+    <h1>Events</h1>
 
-    <div style={{ overflowX: "auto",width: "100vw", alignContent: "center", paddingTop: "2vw" }}>
+    <div style={{ overflowX: "auto",width: "100%", alignContent: "center", paddingTop: "2%" }}>
 
       <div
         style={{ display: "inline-flex", margin: "2%"}}

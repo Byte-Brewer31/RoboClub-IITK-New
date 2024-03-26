@@ -1,19 +1,13 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import Gallery from '../components/gallery';
 import AboutUs from '../components/about_us';
 import EventRow from '../components/events'; 
-import './App.css';
 
 function App() {
-  const handleClick = () => {
-    // Handle navigation to another page
-    window.location.href = '/explore'; // Change the URL to the desired page
-  };
-
   return (
-    <div  className="App">
+    <div className="App">
       <div style={{ 
-        overflowY: 'scroll',
         display: 'flex', // make the container a flex container
         justifyContent: 'space-between', // add padding for spacing
       }}>
@@ -24,8 +18,8 @@ function App() {
           <p style={{color:'white', fontSize: '1.7vw', textAlign: 'left' , paddingBottom: '1vw'}}>
             Robotics and other Combinations will make the <br/>world pretty fantastic compared with today
           </p>
-          <button style={{ backgroundColor: '#733CA8', height: '5vw', width: '20vw', fontSize: '1.5vw', borderRadius: '2vw' ,border: 'none',cursor: "pointer"}} onClick={handleClick}>
-            <p style={{color: 'white', fontSize: '1.7vw', fontWeight: 'bolder'}}>EXPLORE NOW</p>
+          <button style={{ backgroundColor: '#733CA8', height: '5vw', width: '20vw', fontSize: '1.5vw', borderRadius: '2vw' ,border: 'none',cursor: "pointer"}}>
+            <Link to="/about" style={{color: 'white', fontSize: '1.7vw', fontWeight: 'bolder', textDecoration:"none"}}>EXPLORE NOW</Link>
           </button>
           </div>
           <div style={{ width: '50%', textAlign: 'right' }}> {/* right div */}

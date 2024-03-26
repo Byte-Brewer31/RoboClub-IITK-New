@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../pages/App.css';
 
 function Navbar() {
   const navbarStyle = {
