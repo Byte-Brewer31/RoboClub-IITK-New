@@ -8,7 +8,6 @@ import './index.css';
 import Home from './pages/Home.js';
 import AboutUs from './components/about_us';
 import Gallery from './components/gallery';
-import Explore from './pages/explore.js';
 import Projects from './pages/projects.js';
 import Team from './pages/team.js';
 import Blog from './pages/blog.js';
@@ -76,6 +75,7 @@ const Hamburger = () => {
 			overflow:"hidden",
 			backgroundColor:"#444",
 			padding:"5%",
+			zIndex:"10000",
 		}}>
 			<CloseRoundedIcon style={{
 				position:"absolute",
@@ -83,6 +83,7 @@ const Hamburger = () => {
 				right:"5%",
 				width:"50px",
 				height:"50px",
+				zIndex:"100000",
 			}} onClick={() => {
 				setOpen(false);
 			}}/>
@@ -95,6 +96,14 @@ const Hamburger = () => {
 				flexDirection:"column",
 				gap:"40px",
 			}}>
+				<Link style={{
+					fontSize:"30pt",
+					color:"white",
+					fontWeight:"bold",
+					display:"block",
+					width:"fit-content",
+					textDecoration:"none",
+				}} onClick={() => {setOpen(false)}} to="/" >Home</Link>
 				<Link style={{
 					fontSize:"30pt",
 					color:"white",
@@ -160,7 +169,6 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/explore" element={<Explore/>} />
         <Route path="/projects" element={<Projects/>} />
         <Route path="/team" element={<Team/>} />
         <Route path="/blog" element={<Blog/>} />
