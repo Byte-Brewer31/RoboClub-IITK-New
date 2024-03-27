@@ -1,11 +1,11 @@
 import React from "react";
 
-const EventBox = ({ eventNumber, backgroundColor, eventTitle, eventInfo }) => {
+const EventBox = ({ eventNumber, eventTitle, eventInfo }) => {
   return (
     <div
       style={{
         flex: "1",
-        backgroundColor: backgroundColor,
+        backgroundColor: "rgba(39, 27, 56, 0.7)",
         borderRadius: "6.6%",
         boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
         margin: "1%",
@@ -78,7 +78,7 @@ const EventBox = ({ eventNumber, backgroundColor, eventTitle, eventInfo }) => {
               fontFamily: "Poppins",
               fontStyle: "normal",
               fontWeight: "500",
-              fontSize: "20pt",
+              fontSize: "18pt",
               textAlign: "center",
               color: "#FFFFFF",
             }}
@@ -109,7 +109,6 @@ const EventRow = () => {
       >
         <EventBox
           eventNumber={1}
-          backgroundColor="rgba(39, 27, 56, 0.7)"
           eventTitle="Takneek"
           eventInfo="The Science and Technology Council presents to you Takneek 2019, the intra-IITK Science and Technology Championship. A competition in which all the pools shall participate with one common aim in mind, winning the coveted Takneek trophy, with their favourite Science-Figure by their side."
 
@@ -117,20 +116,17 @@ const EventRow = () => {
 
         <EventBox
           eventNumber={2}
-          backgroundColor="rgba(39, 27, 56, 0.7)"
           eventTitle="Takneek"
           eventInfo="The Science and Technology Council presents to you Takneek 2019, the intra-IITK Science and Technology Championship. A competition in which all the pools shall participate with one common aim in mind, winning the coveted Takneek trophy, with their favourite Science-Figure by their side."
         />
 
         <EventBox
           eventNumber={3}
-          backgroundColor="rgba(39, 27, 56, 0.7)"
           eventTitle="Takneek"
           eventInfo="The Science and Technology Council presents to you Takneek 2019, the intra-IITK Science and Technology Championship. A competition in which all the pools shall participate with one common aim in mind, winning the coveted Takneek trophy, with their favourite Science-Figure by their side."
         />
         <EventBox
           eventNumber={4}
-          backgroundColor="rgba(39, 27, 56, 0.7)"
           eventTitle="Takneek"
           eventInfo="The Science and Technology Council presents to you Takneek 2019, the intra-IITK Science and Technology Championship. A competition in which all the pools shall participate with one common aim in mind, winning the coveted Takneek trophy, with their favourite Science-Figure by their side."
         />

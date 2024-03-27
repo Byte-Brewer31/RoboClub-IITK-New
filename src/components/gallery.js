@@ -1,19 +1,41 @@
-// Gallery.js
-
 import React from 'react';
+import {Link} from "react-router-dom";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
-const GalleryItem = ({ imageSrc, altText, isLastItem, onClick }) => (
-  <div className="gallery-item">
-    <img src={imageSrc} alt={altText} />
+const GalleryItem = ({ imageSrc, altText, isLastItem}) => (
+  <div style={{
+  	position:"relative",
+  	width:"100%",
+//   	maxWidth:"580px",
+  	overflow:"hidden",
+  }}>
+    <img src={imageSrc} alt={altText} style={{
+    	width:"100%",
+    	display:"block,"
+    }}/>
     {isLastItem && (
-      <div className="overlay" onClick={onClick}>
+      <Link to="/gallery" style={{
+      	position:"absolute",
+				top:"0",
+				left:"0",
+				width:"100%",
+				height:"100%",
+				backgroundColor:"rgba(0, 0, 0, 0.4)",
+				display:"flex",
+				justifyContent:"center",
+				alignItems:"center",
+				color:"white",
+				fontSize:"20px",
+				cursor:"pointer",
+      }}>
         Show More
-      </div>
+      </Link>
     )}
   </div>
 );
 
-const Gallery = () => {
+const Gallery = () => {	
+	const wideScreen = useMediaQuery("(min-width:900px)");
   const galleryData = [
     { id: 1, src: '../gal2-1@2x.png', alt: 'Image 1' },
     { id: 2, src: '../gal3-1@2x.png', alt: 'Image 2' },
@@ -21,80 +43,37 @@ const Gallery = () => {
     { id: 4, src: '../robotics-club-img-1@2x.png', alt: 'Image 4' },
   ];
 
-  const handleShowMore = () => {
-    // Handle navigation to another page
-    window.location.href = '/gallery'; // Change the URL to the desired page
-  };
-
   return (
     <>
-      {/* CSS Styles */}
-      <style>
-        {`
-          .gallery-container {
-            display: flex;
-            justify-content: center;
-          }
-
-          .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px; /* Adjust the gap according to your preference */
-          }
-
-          .gallery-item {
-            position: relative; /* Ensure proper positioning for overlay */
-            width: 100%;
-            max-width: 100%;
-            overflow: hidden;
-          }
-
-          .gallery-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-          }
-
-          .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4); /* Adjust the opacity as needed */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-          }
-        `}
-      </style>
-
-      {/* React Components */}
-      <div className="Gallery" style={{ 
+      <div style={{ 
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         color: 'white', // Add color for better visibility
+        maxWidth:"1600px",
+        margin:"auto",
       }}>
-        <h1  style={{fontSize: '5vw'}}>Gallery</h1>
-        </div>
-      <div className="gallery-container">
-      
-        <div className="gallery-grid">
-          {galleryData.map((item, index) => (
-            <GalleryItem
-              key={item.id}
-              imageSrc={item.src}
-              altText={item.alt}
-              isLastItem={index === galleryData.length - 1}
-              onClick={handleShowMore}
-            />
-          ))}
-        </div>
-      </div>
+        <h1>Gallery</h1>
+			<div style={{
+// 				display:"flex",
+// 				flexWrap:"wrap",
+				justifyContent:"center",
+				gap:"20px",
+				rowGap:"20px",
+				width:"100%",
+				display: "grid",
+				gridTemplateColumns: (wideScreen ? "1fr 1fr" : "1fr"),
+			}}>
+				{galleryData.map((item, index) => (
+					<GalleryItem
+						key={item.id}
+						imageSrc={item.src}
+						altText={item.alt}
+						isLastItem={index === galleryData.length - 1}
+					/>
+				))}
+			</div>
+			</div>
     </>
   );
 };
