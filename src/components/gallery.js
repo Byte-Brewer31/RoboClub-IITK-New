@@ -37,10 +37,10 @@ const GalleryItem = ({ imageSrc, altText, isLastItem}) => (
 const Gallery = () => {	
 	const wideScreen = useMediaQuery("(min-width:900px)");
   const galleryData = [
-    { id: 1, src: '../gal2-1@2x.png', alt: 'Image 1' },
-    { id: 2, src: '../gal3-1@2x.png', alt: 'Image 2' },
-    { id: 3, src: '../gal4-1@2x.png', alt: 'Image 3' },
-    { id: 4, src: '../robotics-club-img-1@2x.png', alt: 'Image 4' },
+    { id: 1, src: `${process.env.PUBLIC_URL}/gal2-1@2x.png`, alt: 'Image 1' },
+    { id: 2, src: `${process.env.PUBLIC_URL}/gal3-1@2x.png`, alt: 'Image 2' },
+    { id: 3, src: `${process.env.PUBLIC_URL}/gal4-1@2x.png`, alt: 'Image 3' },
+    { id: 4, src: `${process.env.PUBLIC_URL}/robotics-club-img-1@2x.png`, alt: 'Image 4' },
   ];
 
   return (

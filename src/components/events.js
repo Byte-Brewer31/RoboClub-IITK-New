@@ -38,7 +38,7 @@ const EventBox = ({ eventNumber, eventTitle, eventInfo }) => {
           }}
         >
           <img
-            src={`../takneek-1@2x.png`}
+            src={`${process.env.PUBLIC_URL}/takneek-1@2x.png`}
             alt={`Event ${eventNumber}`}
             style={{
               width: "100%",
