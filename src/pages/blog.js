@@ -1,73 +1,77 @@
 import React from "react";
+import {Link, useParams} from "react-router-dom";
+import showdown from "showdown";
+import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
+import blogEntriesRaw from "../blog-entries.json";
 
-const BlogBlocks = ({ imageUrl, title, description, isImageLeft, titleColor, contentColor }) => {
- const imageStyle = {
-    flex: "1",
-    marginRight: isImageLeft ? "5vw" : "5vw", // Margin-right only if image is on the left
-    order: isImageLeft ? "1" : "2", // Change the order based on image position
-    marginLeft: "2vw", // Add space on the left
-    // marginRight: "2vw",
-  };
+const converter = new showdown.Converter();
 
-  const contentStyle = {
-    flex: "2",
-    order: isImageLeft ? "2" : "1", // Change the order based on image position
-    color: contentColor, // Set content color dynamically
-    marginLeft: "2vw", // Add space on the left
-    marginRight: "2vw", // Add space on the right
-  };
+const blogEntries = blogEntriesRaw.map(blog => {
+	let newblog = blog;
+	newblog.html = converter.makeHtml(blog.text.join("\n"));
+	newblog.url = [...blog.title.matchAll(/\b[a-z0-9]+\b/ig)].join("-").toLowerCase();
+	return newblog;
+}).toSorted((a, b) => (b.date - a.date));
 
-  return (
-    <div style={{ display: "flex", alignItems: "center", marginBottom: "2vw" }}>
-      <div style={imageStyle}>
-        <img src={imageUrl} alt={title} style={{ width: "100%" }} />
-      </div>
-      <div style={contentStyle}>
-        <h2 style={{ color: titleColor }}>{title}</h2>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
+const BlogsList = () => {
+  return (<div>
+  	<h1 style={{textAlign:"center"}}>Blogs</h1>
+  	<div style={{
+  		width:"100%",
+//   		display:"flex",
+//   		flexWrap:"wrap",
+//   		gap:"40px"
+  	}}>
+			{blogEntries.map((blog, idx) => (
+			<div key={idx} style={{
+				margin:"auto auto 40px auto",
+				width:"80%",
+				maxWidth:"800px",
+				backgroundColor: "rgba(39, 27, 56, 0.7)",
+				padding:"20px",
+				borderRadius:"40px",
+			}}>
+				<Link to={`/blog/${blog.url}`}>
+					<h3>{blog.title}</h3>
+				</Link>
+				<h4>By {blog.author}</h4>
+				<p style={{fontStyle:"italic"}}>Posted on {`${new Date(blog.date*1000).getDate()}-${(new Date(blog.date*1000).getMonth() + 1).toString().padStart(2, "0")}-${new Date(blog.date*1000).getFullYear()}`}</p>
+			</div>))}
+		</div>
+  	</div>);
 };
 
-const Blogs = () => {
-  return (
-    <div>
-      <div style={{ 
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        color: 'white', // Add color for better visibility
-        marginBottom: '2vw',
-      }}>
-        <h1 style={{ fontSize: '5vw' }}>Robotics Club</h1>
-      </div>
-      <BlogBlocks
-        imageUrl={`${process.env.PUBLIC_URL}/project1.jpg`}
-        title="What do we do"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
-        isImageLeft={true} // First image is on the left
-        titleColor="blue" // Set title color for the first block
-        contentColor="green" // Set content color for the first block
-      />
-      <BlogBlocks
-        imageUrl={`${process.env.PUBLIC_URL}/project2.jpg`}
-        title="Why us"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
-        isImageLeft={false} // Second image is on the right
-        titleColor="red" // Set title color for the second block
-        contentColor="yellow" // Set content color for the second block
-      />
-      <BlogBlocks
-        imageUrl={`${process.env.PUBLIC_URL}/project3.jpg`}
-        title="Our Progress"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
-        isImageLeft={true} // Third image is on the left
-        titleColor="purple" // Set title color for the third block
-        contentColor="orange" // Set content color for the third block
-      />
-    </div>
-  );
-};
+export {BlogsList};
 
-export default Blogs;
+const Blog = () => {
+	const {url} = useParams();
+	const matchedEntry = blogEntries.filter(blog => blog.url === url);
+	if (matchedEntry.length > 0) {
+		let blog = matchedEntry[0];
+		return (
+		<div>
+			<Link to="/blog" style={{
+				display:"flex",
+				width:"200px",
+				height: "50px",
+				justifyContent:"space-between",
+				alignItems:"center",
+				padding:"0 30px 0 10px",
+				color:"white",
+				backgroundColor:"rgba(59, 47, 76, 1)",
+				borderRadius:"30px",
+			}}>
+				<ArrowBackIosNewRoundedIcon />
+				Back to all blogs</Link>
+			<h1>{blog.title}</h1>
+			<h4>By {blog.author}</h4>
+			<p style={{fontStyle:"italic"}}>Posted on {`${new Date(blog.date*1000).getDate()}-${(new Date(blog.date*1000).getMonth() + 1).toString().padStart(2, "0")}-${new Date(blog.date*1000).getFullYear()}`}</p>
+			<div dangerouslySetInnerHTML={{ __html: blog.html }}></div>
+  	</div>)
+	} else {
+		return (<div>Sorry, this blog was not found. Return to home page?</div>);
+	}
+}
+
+export {Blog};
+

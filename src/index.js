@@ -10,7 +10,7 @@ import AboutUs from './components/about_us';
 import Gallery from './components/gallery';
 import Projects from './pages/projects.js';
 import Team from './pages/team.js';
-import Blog from './pages/blog.js';
+import {BlogsList, Blog} from './pages/blog.js';
 
 function Navbar() {
   const linkStyle = {
@@ -171,7 +171,8 @@ const App = () => {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/projects" element={<Projects/>} />
         <Route path="/team" element={<Team/>} />
-        <Route path="/blog" element={<Blog/>} />
+        <Route path="/blog" element={<BlogsList/>} />
+        <Route path="/blog/:url" element={<Blog />} />
       </Routes>
       </div>
 			{/* Footer */}
