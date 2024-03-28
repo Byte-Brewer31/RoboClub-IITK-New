@@ -11,6 +11,7 @@ import Gallery from './components/gallery';
 import {ProjectsList, Project} from './pages/projects.js';
 import Team from './pages/team.js';
 import {BlogsList, Blog} from './pages/blog.js';
+import NotFound from "./pages/404.js"
 
 function Navbar() {
   const linkStyle = {
@@ -174,6 +175,7 @@ const App = () => {
         <Route path="/team" element={<Team/>} />
         <Route path="/blog" element={<BlogsList/>} />
         <Route path="/blog/:url" element={<Blog />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
       </div>
 			{/* Footer */}
