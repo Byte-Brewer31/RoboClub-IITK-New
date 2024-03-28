@@ -69,7 +69,17 @@ const Blog = () => {
 			<div dangerouslySetInnerHTML={{ __html: blog.html }}></div>
   	</div>)
 	} else {
-		return (<div>Sorry, this blog was not found. Return to home page?</div>);
+		return (
+		<div style={{
+			width:"50%",
+			height:"50vh",
+			margin:"auto",
+			display:"flex",
+			justifyContent:"center",
+			alignItems:"center"
+		}}>
+			<h2>Sorry, this blog was not found. <Link to="/">Return to home page?</Link></h2>
+		</div>);
 	}
 }
 

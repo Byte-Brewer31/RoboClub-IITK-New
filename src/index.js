@@ -8,7 +8,7 @@ import './index.css';
 import Home from './pages/Home.js';
 import AboutUs from './components/about_us';
 import Gallery from './components/gallery';
-import Projects from './pages/projects.js';
+import {ProjectsList, Project} from './pages/projects.js';
 import Team from './pages/team.js';
 import {BlogsList, Blog} from './pages/blog.js';
 
@@ -169,7 +169,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/projects" element={<Projects/>} />
+        <Route path="/projects" element={<ProjectsList/>} />
+        <Route path="/project/:url" element={<Project />} />
         <Route path="/team" element={<Team/>} />
         <Route path="/blog" element={<BlogsList/>} />
         <Route path="/blog/:url" element={<Blog />} />
