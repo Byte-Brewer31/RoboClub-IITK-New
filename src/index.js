@@ -227,6 +227,7 @@ const App = () => {
 			<hr style={{width: '85%', borderColor: '#733CA8'}} /> {/* Horizontal line */}
 			<footer style={{textAlign: 'center',fontSize: '15pt',fontWeight: 'bold',color: 'white'}}>
 				<p> Copyright © 2024 All rights reserved | Robotics Club, IIT Kanpur</p> {/* Copyright text */}
+				<p>Credits: SnT Web Team 2023</p>
 			</footer>
 			<br/>
 			</ScrollReset>
