@@ -10,6 +10,7 @@ import AboutUs from './components/about_us';
 import Gallery from './components/gallery';
 import {ProjectsList, Project} from './pages/projects.js';
 import Team from './pages/team.js';
+import Alumni from './pages/alumni.js';
 import {BlogsList, Blog} from './pages/blog.js';
 import NotFound from "./pages/404.js"
 
@@ -52,6 +53,8 @@ function Navbar() {
 				<Link to="/blog" style={linkStyle}>Blog</Link>
 				<Link to="/projects" style={linkStyle}>Projects</Link>
 				<Link to="/team" style={linkStyle}>Team</Link>
+				<Link to="/alumni" style={linkStyle}>Alumni</Link>
+				<Link to="/gallery" style={linkStyle}>Gallery</Link>
 			</div>}
 			{!wideScreen && <Hamburger />}
 		</div>
@@ -137,6 +140,22 @@ const Hamburger = () => {
 					width:"fit-content",
 					textDecoration:"none",
 				}} onClick={() => {setOpen(false)}} to="/team" >Team</Link>
+				<Link style={{
+					fontSize:"30pt",
+					color:"white",
+					fontWeight:"bold",
+					display:"block",
+					width:"fit-content",
+					textDecoration:"none",
+				}} onClick={() => {setOpen(false)}} to="/alumni" >Alumni</Link>
+				<Link style={{
+					fontSize:"30pt",
+					color:"white",
+					fontWeight:"bold",
+					display:"block",
+					width:"fit-content",
+					textDecoration:"none",
+				}} onClick={() => {setOpen(false)}} to="/gallery" >Gallery</Link>
 			</div>
 		</div>}
 		</>
@@ -173,6 +192,7 @@ const App = () => {
         <Route path="/projects" element={<ProjectsList/>} />
         <Route path="/project/:url" element={<Project />} />
         <Route path="/team" element={<Team/>} />
+        <Route path="/alumni" element={<Alumni/>} />
         <Route path="/blog" element={<BlogsList/>} />
         <Route path="/blog/:url" element={<Blog />} />
         <Route path="/*" element={<NotFound />} />
