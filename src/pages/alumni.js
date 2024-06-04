@@ -97,7 +97,7 @@ const TeamRow = () => {
 			<Grid item xs={1}>
 				<TeamMemberBox
           imageUrl={process.env.PUBLIC_URL + '/mdifacebook.svg'}
-          name="John Doe"
+          name="Vipin"
           designation="Frontend Developer"
           facebookLink="#"
           instagramLink="#"
